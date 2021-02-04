@@ -15,7 +15,7 @@ const Import = (props) => {
   return (
     <Container>
       <p>Import Component</p>
-      <Button variant="contained" color="primary">
+      <Button onClick={props.fetchMakes} variant="contained" color="primary">
         Import
       </Button>
       <Table aria-label="makes-table">
@@ -27,11 +27,11 @@ const Import = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.makes.map((makes) => (
-            <TableRow key={makes.id}>
-              <TableCell>{makes.MakeId}</TableCell>
-              <TableCell>{makes.VehicleTypeId}</TableCell>
-              <TableCell>{makes.VehicleTypeName}</TableCell>
+          {props.makes.map((make, index) => (
+            <TableRow key={make.MakeName + index}>
+              <TableCell>{make.MakeId}</TableCell>
+              <TableCell>{make.MakeName}</TableCell>
+              <TableCell></TableCell>
             </TableRow>
           ))}
         </TableBody>
