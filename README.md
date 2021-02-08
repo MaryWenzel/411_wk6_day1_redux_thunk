@@ -30,13 +30,13 @@ Today we are going to create a mock-import utility that we can use in our cars a
 
 - Now we can go back to the "Import" component and write our map function. Inside of the `<TableBody>` tags we need to write `{ props.makes.map()... }`. You should know that part by now. Return a `TableRow` with three `TableCell`s in it. Reference the data from the API to see what you should put where. For example, each make has a "MakeId" and a "MakeName" so you will be using those to correspond to the Id and Make columns. Leave the actions column alone for now.
 
-<!-- here -->
-
 - We've got the setup in our component and we just need to tie the import button in so that it makes the fetch call when it's clicked. First we need to add `mapDispatchToProps` in our container. Let's navigate to the "Import" container and do that now. Map a property called "fetchMakes" to `() => dispatch(fetchMakes())` and remember to import the "fetchMakes" action at the top of the file.
 
 - Now let's go to the Button in our Import component and add an "onClick" method. All it has to do is reference the "fetchMakes" prop. For example, `onClick={props.fetchMakes}`.
 
 - It's time for the moment of truth. Click the button. It should take a second and then populate your table with a list of "makes". If it didn't, check with someone near you or ask the instructor during class. Before you do that though, spend a few minutes debugging to see if you can find out where the issue is.
+
+<!-- Here -->
 
 - If the table is being populated it's time for us to move onto the next step which is adding our actions. We are going to have a dropdown menu under the actions column that allows us to "delete" that particular row. We are going to refence [menus](https://material-ui.com/components/menus/) from Material UI to do this.
 
